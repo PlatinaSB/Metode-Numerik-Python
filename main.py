@@ -26,6 +26,9 @@ Metode Terbuka
                 print("Pilihan metode tidak valid. Harap masukkan angka antara 1 dan 5.")
         except ValueError:
             print("Input tidak valid. Harap masukkan bilangan bulat.")
+
+    toleransi = get_float_optional("Masukkan toleransi (default 1e-6): ", 1e-6)
+    maks_iterasi = get_int_optional("Masukkan maksimum iterasi (default 100): ", 100)
     
     print("Fungsi matematika yang didukung: sin, cos, tan, exp, log, sqrt, abs, pow, pi, e, pow, arcsin, arccos, arctan")
     print("Referensi operator Python: https://www.w3schools.com/python/python_operators.asp")
