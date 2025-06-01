@@ -1,3 +1,33 @@
+import numpy as np
+
+safe_dict = {
+    "np": np,
+    "sin": np.sin,
+    "cos": np.cos,
+    "tan": np.tan,
+    "exp": np.exp,
+    "log": np.log,
+    "sqrt": np.sqrt,
+    "abs": np.abs,
+    "pi": np.pi,
+    "e": np.e,
+    "pow": np.power,
+    "arcsin": np.arcsin,
+    "arccos": np.arccos,
+    "arctan": np.arctan,
+}
+
+def eval_expresion(ekspresi, nilai_x):
+    """
+    Mengevaluasi ekspresi string matematika dengan nilai x tertentu.
+    Menggunakan kamus aman untuk mencegah eksekusi kode berbahaya.
+    """
+    try:
+        return eval(ekspresi, {"__builtins__": None}, safe_dict | {"x": nilai_x})
+    except Exception as e:
+        print(f"Error saat mengevaluasi ekspresi '{ekspresi}': {e}")
+        return None
+
 def get_float_optional(prompt, default):
     """
     Meminta input float dari pengguna, dengan opsi default jika input kosong.
