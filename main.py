@@ -3,9 +3,7 @@ from bisection import bisection
 from regula_falsi import regula_falsi
 from fixed_point import fixed_point
 from newton_raphson import newton_raphson
-
-
-
+from secant import secant
 
 def main():
     print("""
@@ -79,7 +77,14 @@ Metode Terbuka
             print("\nMetode Newton-Raphson tidak konvergen atau gagal.")
 
     if metode_pilihan == 5:
-        NotImplementedError
+        expresion_func = input("Masukkan Ekspresi f(x) (contoh: 'x**3 - x - 2'): ")
+        x0 = float(input("Masukkan nilai awal x0: "))
+        x1 = float(input("Masukkan nilai awal x1: "))
+        root = secant(expresion_func, x0, x1, tol, maxiter)
+        if root is not None:
+            print(f"\nAkar (Metode Secant): {root:.6f}")
+        else:
+            print("\nMetode Secant tidak konvergen atau gagal.")
 
             
 if __name__ == "__main__":
