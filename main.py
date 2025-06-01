@@ -58,7 +58,7 @@ Metode Terbuka
             print("\nMetode Regula Falsi tidak konvergen atau gagal.")
 
     if metode_pilihan == 3:
-        g_func = input("Masukkan Fungsi Iterasi g(x) (contoh: '((x + 2/x) / 2)'): ")
+        g_func = input("Masukkan Fungsi Iterasi g(x) (contoh: '(x + 2) ** (1/3)'): ")
         x0 = float(input("Masukkan nilai awal x0: "))
         root = fixed_point(g_func, x0, tol, maxiter)
         if root is not None:
