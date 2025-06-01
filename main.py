@@ -1,6 +1,8 @@
 from utils import get_float_optional, get_int_optional
 from bisection import bisection
 from regula_falsi import regula_falsi
+from fixed_point import fixed_point
+
 
 
 def main():
@@ -56,7 +58,13 @@ Metode Terbuka
             print("\nMetode Regula Falsi tidak konvergen atau gagal.")
 
     if metode_pilihan == 3:
-        NotImplementedError
+        g_func = input("Masukkan Fungsi Iterasi g(x) (contoh: '((x + 2/x) / 2)'): ")
+        x0 = float(input("Masukkan nilai awal x0: "))
+        root = fixed_point(g_func, x0, tol, maxiter)
+        if root is not None:
+            print(f"\nAkar (Iterasi Titik Tetap): {root:.6f}")
+        else:
+            print("\nMetode Iterasi Titik Tetap tidak konvergen atau gagal.")
 
     if metode_pilihan == 4:
         NotImplementedError
