@@ -2,6 +2,8 @@ from utils import get_float_optional, get_int_optional
 from bisection import bisection
 from regula_falsi import regula_falsi
 from fixed_point import fixed_point
+from newton_raphson import newton_raphson
+
 
 
 
@@ -67,7 +69,14 @@ Metode Terbuka
             print("\nMetode Iterasi Titik Tetap tidak konvergen atau gagal.")
 
     if metode_pilihan == 4:
-        NotImplementedError
+        expresion_func = input("Masukkan Ekspresi f(x) (contoh: 'x**3 - x - 2'): ")
+        expresion_func_turunan = input("Masukkan Turunan f'(x) (contoh: '3*x**2 - 1'): ")
+        x0 = float(input("Masukkan nilai awal x0: "))
+        root = newton_raphson(expresion_func, expresion_func_turunan, x0, tol, maxiter)
+        if root is not None:
+            print(f"\nAkar (Metode Newton-Raphson): {root:.6f}")
+        else:
+            print("\nMetode Newton-Raphson tidak konvergen atau gagal.")
 
     if metode_pilihan == 5:
         NotImplementedError
