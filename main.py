@@ -1,5 +1,6 @@
 from utils import get_float_optional, get_int_optional
 from bisection import bisection
+from regula_falsi import regula_falsi
 
 
 def main():
@@ -45,7 +46,14 @@ Metode Terbuka
             print("\nMetode Bagi Dua tidak konvergen atau gagal.")
 
     if metode_pilihan == 2:
-        NotImplementedError
+        expresion_func = input("Masukkan Ekspresi f(x) (contoh: 'x**3 - x - 2'): ")
+        a = float(input("Masukkan Nilai a: "))
+        b = float(input("Masukkan Nilai b: "))
+        root = regula_falsi(expresion_func, a, b, tol, maxiter)
+        if root is not None:
+            print(f"\nAkar (Metode Regula Falsi): {root:.6f}")
+        else:
+            print("\nMetode Regula Falsi tidak konvergen atau gagal.")
 
     if metode_pilihan == 3:
         NotImplementedError
