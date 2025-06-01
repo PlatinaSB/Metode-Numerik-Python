@@ -1,4 +1,5 @@
 from utils import get_float_optional, get_int_optional
+from bisection import bisection
 
 
 def main():
@@ -27,14 +28,21 @@ Metode Terbuka
         except ValueError:
             print("Input tidak valid. Harap masukkan bilangan bulat.")
 
-    toleransi = get_float_optional("Masukkan toleransi (default 1e-6): ", 1e-6)
-    maks_iterasi = get_int_optional("Masukkan maksimum iterasi (default 100): ", 100)
+    tol = get_float_optional("Masukkan toleransi (default 1e-6): ", 1e-6)
+    maxiter = get_int_optional("Masukkan maksimum iterasi (default 100): ", 100)
     
     print("Fungsi matematika yang didukung: sin, cos, tan, exp, log, sqrt, abs, pow, pi, e, pow, arcsin, arccos, arctan")
     print("Referensi operator Python: https://www.w3schools.com/python/python_operators.asp")
 
     if metode_pilihan == 1:
-        NotImplementedError
+        expresion_func = input("Masukkan Ekspresi f(x) (contoh: 'x**3 - x - 2'): ")
+        a = float(input("Masukkan Nilai a: "))
+        b = float(input("Masukkan Nilai b: "))
+        root = bisection(expresion_func, a, b, tol, maxiter)
+        if root is not None:
+            print(f"\nAkar (Metode Bagi Dua): {root:.6f}")
+        else:
+            print("\nMetode Bagi Dua tidak konvergen atau gagal.")
 
     if metode_pilihan == 2:
         NotImplementedError
