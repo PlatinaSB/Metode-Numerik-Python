@@ -23,7 +23,7 @@ def newton_raphson(expresion_func, expresion_func_turunan, x0, tol=1e-6, maxiter
         
         x1 = x0 - fx / dfx
         selisih = abs(x1 - x0)
-        print(f'{i+1:2d} {x0:15.8e} {fx:15.8e} {dfx:15.8e} {selisih:20.8e}')
+        print(f'{i+1:2d} {x0:15.8f} {fx:15.8f} {dfx:15.8f} {selisih:20.8f}')
         
         if selisih < tol:
             return x1

@@ -31,7 +31,7 @@ def regula_falsi(expresion_func, a, b, tol=1e-6, maxiter=100):
         if fx is None:
             return None
 
-        print(f'{i+1:2d} {a:10.6f} {b:10.6f} {x:10.6f} {fa:15.8e} {fb:15.8e} {fx:15.8e}')
+        print(f'{i+1:2d} {a:10.6f} {b:10.6f} {x:10.6f} {fa:15.8f} {fb:15.8f} {fx:15.8f}')
 
         if abs(fx) < tol:
             return x

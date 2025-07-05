@@ -16,7 +16,7 @@ def fixed_point(g_func, x0, tol=1e-6, maxiter=100):
             return None
 
         selisih = abs(x1 - x0)
-        print(f'{i+1:2d} {x0:15.8e} {x1:15.8e} {selisih:20.8e}')
+        print(f'{i+1:2d} {x0:15.8f} {x1:15.8f} {selisih:20.8f}')
         
         if selisih < tol:
             return x1

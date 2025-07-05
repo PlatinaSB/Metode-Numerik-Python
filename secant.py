@@ -23,7 +23,7 @@ def secant(expresion_func, x0, x1, tol=1e-6, maxiter=100):
         
         x2 = x1 - fx1 * (x1 - x0) / (fx1 - fx0)
         selisih = abs(x2 - x1)
-        print(f'{i+1:2d} {x0:15.8e} {x1:15.8e} {x2:15.8e} {fx1:15.8e} {selisih:20.8e}')
+        print(f'{i+1:2d} {x0:15.8f} {x1:15.8f} {x2:15.8f} {fx1:15.8f} {selisih:20.8f}')
         
         if selisih < tol:
             return x2
